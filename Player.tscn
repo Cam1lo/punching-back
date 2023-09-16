@@ -1,0 +1,231 @@
+[gd_scene load_steps=18 format=3 uid="uid://dj7fatyn1d4gm"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_6kreo"]
+[ext_resource type="Texture2D" uid="uid://doj55uq3w1ua0" path="res://assets/boxer2_spritesheet.png" id="2_4k58j"]
+[ext_resource type="PackedScene" uid="uid://du3d4suh3bng3" path="res://player_health.tscn" id="3_tkajy"]
+[ext_resource type="FontFile" uid="uid://e80v7rnlrv4r" path="res://assets/CONSOLA.TTF" id="4_aae2q"]
+
+[sub_resource type="Animation" id="Animation_6wcm4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_vpsah"]
+resource_name = "cross"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_1ovjc"]
+resource_name = "crouch"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_b3nua"]
+resource_name = "dodge"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_vshr1"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_1rqps"]
+resource_name = "jab"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_57cp3"]
+resource_name = "upper"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_oqjtg"]
+resource_name = "2hands"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [20, 21]
+}
+
+[sub_resource type="Animation" id="Animation_2g8uh"]
+resource_name = "hcross"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [36, 37]
+}
+
+[sub_resource type="Animation" id="Animation_hiddm"]
+resource_name = "hjab"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_m5jbi"]
+resource_name = "hupper"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [40, 41]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sx65y"]
+_data = {
+"2hands": SubResource("Animation_oqjtg"),
+"RESET": SubResource("Animation_6wcm4"),
+"cross": SubResource("Animation_vpsah"),
+"crouch": SubResource("Animation_1ovjc"),
+"dodge": SubResource("Animation_b3nua"),
+"hcross": SubResource("Animation_2g8uh"),
+"hjab": SubResource("Animation_hiddm"),
+"hupper": SubResource("Animation_m5jbi"),
+"idle": SubResource("Animation_vshr1"),
+"jab": SubResource("Animation_1rqps"),
+"upper": SubResource("Animation_57cp3")
+}
+
+[sub_resource type="Theme" id="Theme_0bdhn"]
+default_font = ExtResource("4_aae2q")
+default_font_size = 7
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_6kreo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4k58j")
+hframes = 4
+vframes = 11
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_sx65y")
+}
+
+[node name="PlayerHealth" parent="." instance=ExtResource("3_tkajy")]
+offset_left = -16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 16.0
+rotation = -1.5708
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -33.0
+offset_right = 12.0
+offset_bottom = -19.0
+theme = SubResource("Theme_0bdhn")
+horizontal_alignment = 1
+vertical_alignment = 2

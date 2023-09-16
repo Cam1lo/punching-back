@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://du3d4suh3bng3"]
+
+[ext_resource type="Script" path="res://PlayerHealth.gd" id="1_wluwt"]
+
+[node name="PlayerHealth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -65.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wluwt")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 33.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="fg" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 33.0
+offset_bottom = 2.0
+grow_horizontal = 2
+color = Color(0.909804, 0.364706, 0.364706, 1)

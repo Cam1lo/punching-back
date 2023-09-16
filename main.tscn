@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dndkibab6ioco"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_xnblu"]
+[ext_resource type="PackedScene" uid="uid://dj7fatyn1d4gm" path="res://Player.tscn" id="2_x4d2w"]
+[ext_resource type="Texture2D" uid="uid://d2j2wv2nbbb7q" path="res://assets/boxer1_spritesheet.png" id="3_l1774"]
+[ext_resource type="Texture2D" uid="uid://doj55uq3w1ua0" path="res://assets/boxer2_spritesheet.png" id="4_ap83r"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xnblu")
+
+[node name="Player2" parent="." instance=ExtResource("2_x4d2w")]
+position = Vector2(59, 84)
+boxer_spritesheet = ExtResource("4_ap83r")
+flip = true
+color = Color(0.105882, 0.345098, 1, 1)
+
+[node name="Player1" parent="." instance=ExtResource("2_x4d2w")]
+position = Vector2(38, 84)
+boxer_spritesheet = ExtResource("3_l1774")
+color = Color(1, 0.258824, 0.2, 1)
+
+[node name="timerLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_right = 61.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "2.2"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="timerLabel"]
+wait_time = 5.0
+
+[connection signal="timeout" from="timerLabel/Timer" to="." method="_on_timer_timeout"]
