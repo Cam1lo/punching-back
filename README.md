@@ -1,6 +1,6 @@
-![2024-12-01 at 18 36 11](https://github.com/user-attachments/assets/afecc1db-77c8-412f-9e6e-41bf8824b25d)
+![2024-12-01 at 18 46 33](https://github.com/user-attachments/assets/aed77568-8f94-4cc2-9f17-c112956868a9)
 
-# 🥊 Rock-Paper-Scissors with Boxers (Deprecated)
+# 🥊 Punching Back (Deprecated)
 
 ## **🛑 Status**
 This project is **deprecated** and will not receive further updates. It was created as a learning exercise and is not intended for production use.
